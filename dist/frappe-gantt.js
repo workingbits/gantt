@@ -502,7 +502,7 @@ var Gantt = (function () {
                 class: 'bar-group',
                 append_to: this.group,
             });
-            if (!this.options.readonly) {
+            if (!this.gantt.options.readonly) {
                 this.handle_group = createSVG('g', {
                     class: 'handle-group',
                     append_to: this.group,
