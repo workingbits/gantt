@@ -87,6 +87,7 @@ export default class Gantt {
             popup_trigger: 'click',
             custom_popup_html: null,
             language: 'en',
+            readonly: false,
         };
         this.options = Object.assign({}, default_options, options);
     }
@@ -695,6 +696,7 @@ export default class Gantt {
         });
 
         $.on(this.$svg, 'mousemove', (e) => {
+            if(this.options.readonly) return;
             if (!action_in_progress()) return;
             const dx = e.offsetX - x_on_start;
             const dy = e.offsetY - y_on_start;
@@ -776,6 +778,7 @@ export default class Gantt {
         });
 
         $.on(this.$svg, 'mousemove', (e) => {
+            if (this.options.readonly) return;
             if (!is_resizing) return;
             let dx = e.offsetX - x_on_start;
             let dy = e.offsetY - y_on_start;

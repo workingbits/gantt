@@ -42,10 +42,12 @@ export default class Bar {
             class: 'bar-group',
             append_to: this.group,
         });
-        this.handle_group = createSVG('g', {
-            class: 'handle-group',
-            append_to: this.group,
-        });
+        if (!this.options.readonly) {
+            this.handle_group = createSVG('g', {
+                class: 'handle-group',
+                append_to: this.group,
+            });
+        }
     }
 
     prepare_helpers() {
