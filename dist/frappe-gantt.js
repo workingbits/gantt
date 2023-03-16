@@ -502,12 +502,10 @@ var Gantt = (function () {
                 class: 'bar-group',
                 append_to: this.group,
             });
-            if (!this.gantt.options.readonly) {
-                this.handle_group = createSVG('g', {
-                    class: 'handle-group',
-                    append_to: this.group,
-                });
-            }
+            this.handle_group = createSVG('g', {
+                class: 'handle-group',
+                append_to: this.group,
+            });
         }
 
         prepare_helpers() {
@@ -532,7 +530,8 @@ var Gantt = (function () {
             this.draw_bar();
             this.draw_progress_bar();
             this.draw_label();
-            this.draw_resize_handles();
+            if (!this.gantt.options)
+                this.draw_resize_handles();
         }
 
         draw_bar() {
