@@ -70,8 +70,6 @@ $handle-color: #ddd !default;
 		fill: #fff;
 		dominant-baseline: central;
 		text-anchor: middle;
-		font-size: 12px;
-		font-weight: lighter;
 
 		&.big {
 			fill: $text-light;
@@ -118,7 +116,6 @@ $handle-color: #ddd !default;
 	}
 
 	.lower-text, .upper-text {
-		font-size: 12px;
 		text-anchor: middle;
 	}
 	.upper-text {
@@ -136,7 +133,6 @@ $handle-color: #ddd !default;
 .gantt-container {
 	position: relative;
 	overflow: auto;
-	font-size: 12px;
 
 	.popup-wrapper {
 		position: absolute;
